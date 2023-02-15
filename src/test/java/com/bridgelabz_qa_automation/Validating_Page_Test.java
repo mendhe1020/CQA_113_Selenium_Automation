@@ -1,11 +1,9 @@
 package com.bridgelabz_qa_automation;
 
-import java.util.List;
 import java.util.Scanner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class webElement_Interface_Methods {
+public class Validating_Page_Test {
 
 	WebDriver driver;
 
@@ -25,7 +23,7 @@ public class webElement_Interface_Methods {
 		Scanner sc = new Scanner(System.in);
 
 		int variable;
-		System.out.println("Please enter the Num 1 Edge, 2 Chrome, 3 FireFox");
+		System.out.println("Please enter the Num 1 Edge, 2 Chrome");
 
 		variable = sc.nextInt();
 
@@ -59,7 +57,6 @@ public class webElement_Interface_Methods {
 		String actaulUrl = driver.getCurrentUrl();
 		System.out.println("the expected url is:" + expectedUrl);
 		System.out.println("the acual url is:" + actaulUrl);
-		driver.close();
 		if (actaulUrl.equals(expectedUrl)) {
 			System.out.println("url validation success");
 		} else {
@@ -76,7 +73,6 @@ public class webElement_Interface_Methods {
 		String actaulTitle = driver.getTitle();
 		System.out.println("the expected title is:" + expectedTitle);
 		System.out.println("the acual title is:" + actaulTitle);
-		driver.close();
 		if (actaulTitle.equals(expectedTitle)) {
 			System.out.println("title validation successs");
 		} else {
@@ -90,7 +86,6 @@ public class webElement_Interface_Methods {
 		driver.get("https://www.facebook.com/");
 		driver.manage().window().maximize();
 		WebElement element = driver.findElement(By.name("email"));
-		driver.close();
 		if (element.isDisplayed()) {
 			System.out.println("element is displayed successfully");
 		} else {
@@ -110,7 +105,6 @@ public class webElement_Interface_Methods {
 		System.out.println("isDisplayed " + d);
 		System.out.println("isEnabled " + e);
 		System.out.println("isSelected " + s);
-		driver.close();
 	}
 
 	@Test
@@ -120,7 +114,6 @@ public class webElement_Interface_Methods {
 		driver.findElement(By.id("email")).sendKeys("anurag@gmail.com");
 		Thread.sleep(3000);
 		driver.findElement(By.id("email")).clear();
-		driver.close();
 	}
 
 	@Test
@@ -172,35 +165,12 @@ public class webElement_Interface_Methods {
 		driver.manage().window().maximize();
 		WebElement email = driver.findElement(By.name("email"));
 		Dimension size = email.getSize();
-		System.out.println("Height=" + size.getHeight());
-		System.out.println("Width=" + size.getWidth());
 		int w = size.height;
 		int h = size.width;
 		System.out.println("Height=" + w);
 		System.out.println("Width=" + h);
 		driver.close();
 	}
-	
-	@Test
-    public void webelement_Clear_And_Sendkey_Method() throws InterruptedException {
-        driver.get("https://www.facebook.com/");
-        driver.manage().window().maximize();
-        driver.findElement(By.id("email")).sendKeys("anurag@gmail.com");
-        Thread.sleep(3000);
-        driver.findElement(By.id("email")).clear();
-        Thread.sleep(3000);
-        driver.findElement(By.id("email")).sendKeys("anurag@gmail.com");
-        Thread.sleep(3000);
-        driver.findElement(By.id("email")).sendKeys(Keys.CONTROL+"a"+ Keys.DELETE);
-    }
-    
-    @Test
-    public void webelement_Click_Method() throws InterruptedException {
-        driver.get("https://www.facebook.com/");
-        driver.manage().window().maximize();
-        driver.findElement(By.name("login")).sendKeys(Keys.ENTER);
-        Thread.sleep(3000);
-    }
 
 	@Test
 	public void email_Error_Message() {
@@ -211,13 +181,13 @@ public class webElement_Interface_Methods {
 		System.out.println("expected error is:" + expectedError);
 		WebElement element = driver.findElement(By.linkText("Find your account and log in."));
 		String actualError = element.getText();
-		driver.close();
 		if (actualError.equals(expectedError)) {
 			System.out.println("error message is validated");
 		} else {
 			System.out.println("error message is not validated");
 
 		}
+
 	}
 
 	@Test
@@ -230,32 +200,32 @@ public class webElement_Interface_Methods {
 		System.out.println("expected error is:" + expectedError);
 		WebElement element = driver.findElement(By.linkText("Forgotten password?"));
 		String actualError = element.getText();
-		driver.close();
 		if (actualError.equals(expectedError)) {
 			System.out.println("error message is validated");
 		} else {
 			System.out.println("error message is not validated");
 
 		}
+
 	}
 
 	@Test
-	public void email_entered_isnt_connected_to_an_account() {
+	public void create_Error_Message() {
 		driver.get("https://www.facebook.com/");
 		driver.manage().window().maximize();
-		driver.findElement(By.id("email")).sendKeys("an");
-		driver.findElement(By.name("pass")).sendKeys("1063");
+		driver.findElement(By.id("email")).sendKeys("anurag.com");
 		driver.findElement(By.name("login")).click();
-		String expectedError = "Find your account and log in.";
+		String expectedError = "Create a new Facebook account.";
 		System.out.println("expected error is:" + expectedError);
-		WebElement element = driver.findElement(By.linkText("Find your account and log in."));
+		WebElement element = driver.findElement(By.linkText("Create a new Facebook account."));
 		String actualError = element.getText();
-		driver.close();
 		if (actualError.equals(expectedError)) {
 			System.out.println("error message is validated");
 		} else {
 			System.out.println("error message is not validated");
 
 		}
+
 	}
+
 }

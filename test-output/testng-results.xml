@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="7" total="8" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-03T17:53:16 IST" name="Default suite" finished-at="2023-02-03T17:53:41 IST" duration-ms="25475">
+  <suite started-at="2023-02-14T15:40:58 IST" name="Default suite" finished-at="2023-02-14T15:41:29 IST" duration-ms="31099">
     <groups>
     </groups>
-    <test started-at="2023-02-03T17:53:16 IST" name="Default test" finished-at="2023-02-03T17:53:41 IST" duration-ms="25475">
-      <class name="com.bridgelabz_qa_automation.Handling_Pop_Up_Test">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.bridgelabz_qa_automation.Handling_Pop_Up_Test@3ce1e309]" started-at="2023-02-03T17:53:16 IST" name="setup" finished-at="2023-02-03T17:53:23 IST" duration-ms="7440" status="PASS">
+    <test started-at="2023-02-14T15:40:58 IST" name="Default test" finished-at="2023-02-14T15:41:29 IST" duration-ms="31099">
+      <class name="com.bridgelabz_qa_automation.FindElements_Method_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.bridgelabz_qa_automation.FindElements_Method_Test@6dc17b83]" started-at="2023-02-14T15:40:58 IST" name="setup" finished-at="2023-02-14T15:41:12 IST" duration-ms="14181" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="child_Browser_Popup()[pri:0, instance:com.bridgelabz_qa_automation.Handling_Pop_Up_Test@3ce1e309]" started-at="2023-02-03T17:53:23 IST" name="child_Browser_Popup" finished-at="2023-02-03T17:53:41 IST" duration-ms="17996" status="PASS">
+        <test-method signature="wbtable()[pri:0, instance:com.bridgelabz_qa_automation.FindElements_Method_Test@6dc17b83]" started-at="2023-02-14T15:41:12 IST" name="wbtable" finished-at="2023-02-14T15:41:29 IST" duration-ms="16861" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- child_Browser_Popup -->
-      </class> <!-- com.bridgelabz_qa_automation.Handling_Pop_Up_Test -->
+        </test-method> <!-- wbtable -->
+      </class> <!-- com.bridgelabz_qa_automation.FindElements_Method_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

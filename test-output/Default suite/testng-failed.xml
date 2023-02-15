@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.bridgelabz_qa_automation.Handling_Pop_Up_Test">
+      <class name="com.bridgelabz_qa_automation.sweet_shockley_Test">
         <methods>
-          <include name="hidden_Division_Popup"/>
+          <include name="sweet_shockley_Signup"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.bridgelabz_qa_automation.Handling_Pop_Up_Test -->
+      </class> <!-- com.bridgelabz_qa_automation.sweet_shockley_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

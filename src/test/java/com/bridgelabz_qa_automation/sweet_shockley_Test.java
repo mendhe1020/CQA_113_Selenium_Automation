@@ -2,6 +2,7 @@ package com.bridgelabz_qa_automation;
 
 import java.util.Scanner;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -9,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Launch_Browser_Test {
+public class sweet_shockley_Test {
 
 	WebDriver driver;
 
@@ -19,7 +20,7 @@ public class Launch_Browser_Test {
 		Scanner sc = new Scanner(System.in);
 
 		int variable;
-		System.out.println("Please enter the Num 1 Edge, 2 Chrome, 3 FireFox");
+		System.out.println("Please enter the Num 1 Edge, 2 Chrome");
 
 		variable = sc.nextInt();
 
@@ -45,30 +46,17 @@ public class Launch_Browser_Test {
 	}
 
 	@Test
-
-	public void launch_browser() {
-
-		driver.get("https://www.bridgelabz.com/");
+	public void sweet_shockley_Signup() throws InterruptedException {
+		driver.get("https://z3t0c9.csb.app/");
 		driver.manage().window().maximize();
-		String title = driver.getTitle();
-		System.out.println("Current page titel is:" + title);
-		String url = driver.getCurrentUrl();
-		System.out.println("Current page url is:" + url);
-		String sourcecode = driver.getPageSource();
-		System.out.println("Current page sourcecode is:" + sourcecode);
-		driver.close();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[1]/div[1]/input[1]"))
+				.sendKeys("anurag.mendhe12@gmail.com");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[1]/div[2]/input[1]")).sendKeys("106322");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+
 	}
 
-	@Test
-
-	public void browser_navigations() {
-
-		driver.get("https://www.bridgelabz.com/");
-		driver.manage().window().maximize();
-		driver.navigate().to("https://www.amazon.in/");
-		driver.navigate().back();
-		driver.navigate().refresh();
-		driver.navigate().forward();
-		driver.close();
-	}
 }

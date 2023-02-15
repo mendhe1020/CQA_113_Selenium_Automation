@@ -96,6 +96,6 @@ public class Locators_Test {
 	        driver.findElement(By.xpath("//button[@name='websubmit']")).click();
 
 	    }
-
+	    
 
 }
